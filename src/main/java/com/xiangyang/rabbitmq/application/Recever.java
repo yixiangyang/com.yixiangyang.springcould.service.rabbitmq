@@ -10,7 +10,7 @@ import com.rabbitmq.client.DefaultConsumer;
 import com.rabbitmq.client.Envelope;
 
 public class Recever {
-	private final static String QUEUE_NAME = "hello1";
+	private final static String QUEUE_NAME = "hello";
 	public static void main(String[] args) throws Exception {
 		Connection con = ConnectionUtil.getConnection();
 		//创建通道
