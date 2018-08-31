@@ -2,22 +2,26 @@ package com.xiangyang.rabbitmq.application;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.MessageProperties;
 
-public class Sender {
-	private final static String QUEUE_NAME = "hello";
+public class SenderWork1 {
+
+	private static final String QUEUE_NAME = "task_queue";
 	
 	public static void main(String[] args) throws Exception {
-		//获取连接
+		// 获取连接
 		Connection con = ConnectionUtil.getConnection();
-		//创建通道
+		// 创建通道
 		Channel channel = con.createChannel();
-		//声明队列
+		// 声明队列
 		channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-		//发送前
-		channel.basicPublish("", QUEUE_NAME, null, "发送消息22".getBytes());
-		channel.basicPublish("", QUEUE_NAME, null, "发送消息3333".getBytes());
+		channel.basicPublish("", QUEUE_NAME,
+		        MessageProperties.PERSISTENT_TEXT_PLAIN,
+		        "这是工作消息".getBytes("UTF-8"));
 		channel.close();
 		con.close();
+		
+		
 	}
 
 }

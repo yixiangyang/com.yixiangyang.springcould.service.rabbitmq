@@ -2,7 +2,12 @@ package com.xiangyang.rabbitmq.application;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
-
+/**
+ * hello1生产者 生产的消息
+ * 只要消费者接收过就不会再接收了 
+ * @author 15138
+ *
+ */
 public class Sender1 {
 	private final static String QUEUE_NAME = "hello1";
 	
