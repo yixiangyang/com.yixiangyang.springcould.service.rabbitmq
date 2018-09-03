@@ -1,2 +1,7 @@
 # com.yixiangyang.springcould.service.rabbitmq
-##1、rabbitmq 交换机有四种类型 direct 直接fanout 扇出交换topic 主题交换 headers 标题交换
+##1、rabbitmq 交换机有四种类型 direct 直接fanout 扇出交换topic 主题交换 headers 标题交换  
+##direct交换
+直接交换基于消息路由密钥将消息传递到队列. 工作原理:队列用路由密钥K绑定到交换机,当具有路由密钥R的新消息到达直接交换时，
+如果K = R，则交换机将其路由到队列,直接交换通常用于以循环方式在多个工作者（同一应用程序的实例）之间分配任务
+##fanout 扇出交换
+扇出交换将消息路由到绑定到它的所有队列，并忽略路由密钥。如果N队列绑定到扇出交换，则当向该交换发布新消息时，该消息的副本将被传递到所有N个队列。扇出交换是消息广播路由的理想选择
