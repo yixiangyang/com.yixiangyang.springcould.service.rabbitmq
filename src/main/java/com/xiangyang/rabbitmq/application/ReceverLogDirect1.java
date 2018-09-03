@@ -18,7 +18,7 @@ public class ReceverLogDirect1 {
 		channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.DIRECT);
 		String queueName = channel.queueDeclare().getQueue();
 
-		channel.queueBind(queueName, EXCHANGE_NAME, "");
+		channel.queueBind(queueName, EXCHANGE_NAME, "error");
 
 		Consumer consumer = new DefaultConsumer(channel) {
 			@Override
