@@ -7,6 +7,7 @@
 ![Image text](https://github.com/yixiangyang/com.yixiangyang.image.respository/blob/master/rabbitMqImage/exchange-direct.png)
 ##fanout 扇出交换  
 扇出交换将消息路由到绑定到它的所有队列，并忽略路由密钥。如果N队列绑定到扇出交换，则当向该交换发布新消息时，该消息的副本将被传递到所有N个队列。扇出交换是消息广播路由的理想选择  
+![Image text](https://github.com/yixiangyang/com.yixiangyang.image.respository/blob/master/rabbitMqImage/exchange-fanout.png)
 ##topic 主题交换  
 主题基于消息路由密钥与用于将队列绑定到交换的模式之间的匹配来交换将消息路由到一个或多个队列。主题交换类型通常用于实现各种发布/订阅模式变体。主题交换通常用于消息的多播路由。  
 ##headers 标题交换  
